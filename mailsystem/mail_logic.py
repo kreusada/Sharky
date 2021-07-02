@@ -152,7 +152,7 @@ class MailLogic:
                 return False
 
         try:
-            channel = await category.create_text_channel(name=user.id)
+            channel = await category.create_text_channel(name=f"mail-{user.id}")
         except discord.Forbidden:
             self.log.debug(f"Forbidden to create channel in {guild.id}")
             return False
